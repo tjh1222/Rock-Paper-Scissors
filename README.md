@@ -1,0 +1,1 @@
+This is a a project that allows us to play the popular game of chance called "Rock, Paper, Scissors". 
