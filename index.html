@@ -1,3 +1,164 @@
 <script>
+
+    // function that selects a random computer move (Rock, Paoer, or Scissors)
+    
+    function computerPlay()
+    {
+        const lowerBound = 1;
+        const upperBound = 3;
+        let randomChoice;
+
+        let randomInt = Math.floor(Math.random()*(upperBound-lowerBound+1))+lowerBound;
+        
+        if (randomInt === 1)
+        {
+            randomChoice = "rock";
+            return randomChoice;
+        }
+        else if (randomInt ===2)
+        {
+            randomChoice = "paper";
+            return randomChoice;
+        }
+        else
+        {
+            randomChoice = "scissors";
+            return randomChoice;
+        }
+
+    }
+
+// This is a function that simulates one round of rock, paper, scissors with a computer
+
+    function playRound(playerSelection, computerSelection)
+    {
+        console.log("Player Selects " + playerSelection + " and the computer selects " + computerSelection);
+        if (playerSelection === "rock")
+        {
+            if (computerSelection === "scissors")
+            {
+                console.log("You Win! Rock Beats Scissors!");
+                return "You Win! Rock beats Scissors!";
+            }
+            else if (computerSelection === "paper")
+            {
+                console.log("You Lose! Paper covers Rock");
+                return "You Lose! Paper covers Rock!";
+            }
+            else
+            {
+                console.log("There is a tie! No points awarded");
+                return "There is a tie! No points awarded!";
+            }
+            
+        }
+        if (playerSelection === "paper")
+        {
+            if (computerSelection === "scissors")
+            {
+                console.log("You lose! Scissors cuts paper!");
+                return "You lose! Scissors cuts paper!";
+            }
+            else if (computerSelection === "paper")
+            {
+                console.log("There is a tie! No points awarded!");
+                return "There is a tie! No points awarded!";
+            }
+            else
+            {
+                console.log("You Win! Paper covers Rock");
+                return("You Win! Paper covers Rock");
+            }
+            
+        }
+
+        if (playerSelection === "scissors")
+        {
+            if (computerSelection === "scissors")
+            {
+                console.log("There is a tie! No points awarded!");
+                return "There is a tie! No points awarded!";
+            }
+            else if (computerSelection === "paper")
+            {
+                console.log("You Win! Scissors cuts paper!");
+                return "You Win! Scissors cuts paper!";
+            }
+            else
+            {
+                console.log("You Lose! Rock beats Scissors!");
+                return "You Lose! Rock beats Scissors!";
+            }
+            
+        }
+
+
+    }
+
+    function winOrLose(str)
+    {
+        let strSlice = str.slice(0, 5)
+
+        if (strSlice.charAt(strSlice.length - 1) === "W")
+        {
+            return 1;
+        }
+        else if (strSlice.charAt(strSlice.length - 1) === "L")
+        {
+            return 2;
+        }
+        else 
+        {
+            return 0;
+        }
+    }
+
+    function game()
+    {
+        const numOfRounds = 5;
+        let playerScore = 0;
+        let computerScore = 0;
+
+        for (let i = 0; i < numOfRounds; i++)
+        {
+            let playerSelection;
+            do {
+                playerSelection = prompt("Rock, Paper, or Scissors?");
+                playerSelection = playerSelection.toLowerCase();
+            }
+            while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors")
+            
+            let roundResult = playRound(playerSelection.toLowerCase(), computerPlay());
+            let pointAllocation = winOrLose(roundResult);
+
+            if (pointAllocation === 1)
+            {
+                playerScore += 1;
+            }
+            else if (pointAllocation === 2)
+            {
+                computerScore += 1;
+            }
+
+            else {
+                continue;
+            }
+
+        }
+        if (playerScore > computerScore)
+        {
+            return "You win";
+        }
+
+        else if (playerScore === computerScore)
+        {
+            return "It is tie!";
+        }
+        else if (playerScore < computerScore)
+        {
+            return "You Lose!";
+        }
+
+    }
     
 </script>
