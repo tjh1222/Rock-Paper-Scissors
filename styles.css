@@ -1,0 +1,88 @@
+.container {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    background-color: #f2f2f2;
+    margin: 0px;
+    padding: 0px;
+}
+h1 {
+    margin: 0px;
+    padding-top: 5px;
+}
+header {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    height: 50px;
+    background-color: rgb(99, 189, 187);
+    color: #f2f2f2;
+
+
+
+}
+
+.results {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.playerSelection {
+    text-align: center;
+}
+
+.newGame {
+    text-align: center;
+    margin-top: 20px;
+}
+#newGame {
+    text-align: center;
+    width: 100px;
+    height: 50px;
+
+}
+
+#gameStatus {
+    text-align: center;
+    height: 50px;
+    margin-left: 35%;
+    margin-right: 35%;
+
+}
+
+#Rock {
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background-size: 150px 150px;
+    background-image: url("/Users/Tyler/python/the_odin_project/rockPaperScissors/Rock-Paper-Scissors/rock.png");
+    background-repeat: no-repeat;
+
+}
+
+
+#Paper {
+
+    height: 150px;
+    width: 150px;
+    background-size: 150px 150px;
+    background-image: url("/Users/Tyler/python/the_odin_project/rockPaperScissors/Rock-Paper-Scissors/paper.png");
+    background-repeat: no-repeat;
+
+}
+
+#Scissors {
+
+    height: 150px;
+    width: 150px;
+    background-size: 150px 150px;
+    background-image: url("/Users/Tyler/python/the_odin_project/rockPaperScissors/Rock-Paper-Scissors/scissors.png");
+    background-repeat: no-repeat;
+
+}
